@@ -93,8 +93,7 @@ public class ClienteController {
             throw new RuntimeException("Erro ao atualizar Cliente");
         }     
     }
-        
-        
+
      public void removeById (int Id) {
         
          String sql = "DELETE FROM cliente WHERE id = ?";
@@ -117,10 +116,8 @@ public class ClienteController {
              
          } finally {
              
-             ConnectionFactory.closeConnection(connection, statement);
-             
+             ConnectionFactory.closeConnection(connection, statement);  
          }    
-  
     } 
      
      
@@ -232,7 +229,6 @@ public class ClienteController {
         
         return id;
     }  
-     
      
         public void getAllNames(JComboBox comboBox) {
               

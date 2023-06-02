@@ -136,7 +136,9 @@ public class AluguelController {
         } catch (Exception ex) {
             
             throw new RuntimeException("Erro ao atualizar Aluguel");
-        }     
+        }  finally {           
+            ConnectionFactory.closeConnection(connection, statement);   
+        }   
     }
         
         

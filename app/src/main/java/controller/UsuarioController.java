@@ -124,7 +124,11 @@ public class UsuarioController {
         } catch (Exception ex) {
             
             throw new RuntimeException("Erro ao atualizar Usuario");
-        }     
+        }finally {           
+            ConnectionFactory.closeConnection(connection, statement);   
+        }
+        
+        
     }
         
      public void removeById (int Id) {
