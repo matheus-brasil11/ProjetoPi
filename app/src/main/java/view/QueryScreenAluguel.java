@@ -26,10 +26,6 @@ import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 import model.Aluguel;
 
-/**
- *
- * @author User
- */
 public class QueryScreenAluguel extends javax.swing.JDialog {
 
      MaskFormatter mf = null; 
@@ -38,7 +34,7 @@ public class QueryScreenAluguel extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-
+        setTitle("Alterar Aluguel");
         try {
         mf = new MaskFormatter("##-##-####");
         mf.setPlaceholderCharacter('_');
@@ -275,12 +271,7 @@ public class QueryScreenAluguel extends javax.swing.JDialog {
         
         JOptionPane.showMessageDialog(null, "Aluguel Alterado com Sucesso");
         
-        dispose();
-        
-        
-
-
-        // TODO add your handling code here:
+        dispose();    
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void txtDataAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataAluguelActionPerformed
@@ -297,7 +288,6 @@ public class QueryScreenAluguel extends javax.swing.JDialog {
         
        }
        });
-        // TODO add your handling code here:
     }//GEN-LAST:event_cbVeiculoActionPerformed
 
     private void cbClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbClienteActionPerformed
@@ -310,7 +300,6 @@ public class QueryScreenAluguel extends javax.swing.JDialog {
         
        }
        });  
-             // TODO add your handling code here:
     }//GEN-LAST:event_cbClienteActionPerformed
 
     /**

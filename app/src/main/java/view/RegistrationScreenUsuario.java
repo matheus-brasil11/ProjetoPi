@@ -21,6 +21,7 @@ public class RegistrationScreenUsuario extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Cadastro de usuário");
     }
 
     /**

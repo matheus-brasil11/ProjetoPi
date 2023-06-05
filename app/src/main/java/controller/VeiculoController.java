@@ -342,7 +342,7 @@ public class VeiculoController {
     
     public boolean verificarVeiculoAlugado(Veiculo veiculo){
         
-        String sql = "SELECT * FROM Veiculo V Join Aluguel A On ? = A.idVeiculo Where a.entregue = 'Não'";
+        String sql = "SELECT * FROM Veiculo V Join Aluguel A on ? = A.idVeiculo";
         
         Connection connection = null;
         PreparedStatement statement = null;

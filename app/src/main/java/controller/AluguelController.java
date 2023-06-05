@@ -217,7 +217,7 @@ public class AluguelController {
      
      public List<Aluguel> getAllByNome(String nome) {
               
-        String sql = "SELECT * FROM Cliente C Join Aluguel A on C.id = A.idCliente where C.nomeCliente LIKE ?";
+        String sql = "SELECT * FROM Cliente C JOIN Aluguel A ON C.id = A.idCliente JOIN Veiculo V ON A.idVeiculo = V.id WHERE C.nomeCliente LIKE ? or V.modelo LIKE ?";
         
         Connection connection = null;
         PreparedStatement statement = null;
@@ -230,6 +230,7 @@ public class AluguelController {
             connection = ConnectionFactory.getConnection();
             statement = connection.prepareStatement(sql);
             statement.setString(1, nome + "%" );
+            statement.setString(2, nome + "%" );
             resultSet = statement.executeQuery();
             
         while(resultSet.next()) {
@@ -310,11 +311,31 @@ public class AluguelController {
       PreparedStatement statement = null;
       ResultSet resultSet = null;
 
+        DateFormat formatoSaida = new SimpleDateFormat("yyyy-MM-dd");
+         
+        String dataConvertida = formatoSaida.format(dataInicio);
+        String dataConvertida2 = formatoSaida.format(dataFim);
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        
+        java.util.Date dataFormatada = null;
+        java.util.Date dataFormatada2 = null;
+
+        try {
+             dataFormatada = sdf.parse(dataConvertida);
+             dataFormatada2 = sdf.parse(dataConvertida2);
+         } catch (ParseException ex) {
+             Logger.getLogger(RegistrationScreenAluguel.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
+      
+      
+      
       try {
         connection = ConnectionFactory.getConnection();
         statement = connection.prepareStatement(sql);
-        statement.setDate(1,new java.sql.Date(dataInicio.getTime()));
-        statement.setDate(2,new java.sql.Date(dataFim.getTime()));
+        statement.setDate(1,new java.sql.Date(dataFormatada.getTime()));
+        statement.setDate(2,new java.sql.Date(dataFormatada2.getTime()));
         resultSet = statement.executeQuery();
             
         float valor = 0f;

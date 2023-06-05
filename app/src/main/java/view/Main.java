@@ -16,7 +16,7 @@ public class Main extends javax.swing.JFrame {
     
     public Main() {
         initComponents();
-        
+        setTitle("Tela de Login");
         setLocationRelativeTo(null);
         
     }
@@ -121,7 +121,6 @@ public class Main extends javax.swing.JFrame {
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
 
         RegistrationScreenUsuario registrationScreen = new RegistrationScreenUsuario(this ,rootPaneCheckingEnabled);
-        registrationScreen.setTitle("Cadastro de usuário");
         registrationScreen.setVisible(true);
     }//GEN-LAST:event_btnCadastrarActionPerformed
 

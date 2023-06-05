@@ -28,6 +28,7 @@ public class QueryScreenUsuario extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Alterar Usuário");
     }
 
     /**
@@ -135,6 +136,8 @@ public class QueryScreenUsuario extends javax.swing.JDialog {
         jPanel2.add(txtEmail);
         txtEmail.setBounds(210, 180, 95, 24);
 
+        btnAlterar.setBackground(new java.awt.Color(0, 46, 116));
+        btnAlterar.setForeground(new java.awt.Color(255, 255, 255));
         btnAlterar.setText("Alterar");
         btnAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

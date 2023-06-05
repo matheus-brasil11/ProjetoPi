@@ -40,6 +40,7 @@ public class ScreenAluguel extends javax.swing.JFrame {
         initComponetsModel();
         decorateTableTask();
         setLocationRelativeTo(null); 
+        setTitle("Aluguéis");
     }
 
     @SuppressWarnings("unchecked")
@@ -73,9 +74,9 @@ public class ScreenAluguel extends javax.swing.JFrame {
         lblControleDeClientes.setBounds(224, 52, 243, 32);
 
         lblBusqueCliente.setForeground(new java.awt.Color(255, 255, 255));
-        lblBusqueCliente.setText("Busque o aluguel pelo nome do Cliente");
+        lblBusqueCliente.setText("Busque o aluguel pelo nome do Cliente ou Modelo do carro");
         jPanel1.add(lblBusqueCliente);
-        lblBusqueCliente.setBounds(233, 110, 218, 16);
+        lblBusqueCliente.setBounds(190, 110, 330, 16);
 
         txtBuscaAluguel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

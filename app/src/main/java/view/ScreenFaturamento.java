@@ -24,9 +24,10 @@ public class ScreenFaturamento extends javax.swing.JFrame {
     public ScreenFaturamento() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Faturamento");
     
          try {
-        mf = new MaskFormatter("####-##-##");
+        mf = new MaskFormatter("##-##-####");
         mf.setPlaceholderCharacter('_');
         } catch (ParseException e) {
         e.printStackTrace();
@@ -165,15 +166,22 @@ public class ScreenFaturamento extends javax.swing.JFrame {
        
         AluguelController aluguelController = new AluguelController();
         
+        System.out.println("TESTE = " + txtDataInicial.getText().toString() );
         
+        if ( (txtDataInicial.getValue() == null ) || ( txtDataFinal.getValue() == null )) {
+
+            JOptionPane.showMessageDialog(null, "Existem Informações sem atribuição, por favor preencha todos os dados");
+            return;
+
+        } else {
+           
         String dataString = txtDataInicial.getValue().toString();
         String dataString2 = txtDataFinal.getValue().toString();
-        
         
         Date dataFormatada = null;
         Date dataFormatada2 = null;
         
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         
         try {
              dataFormatada = sdf.parse(dataString);
@@ -182,26 +190,11 @@ public class ScreenFaturamento extends javax.swing.JFrame {
              Logger.getLogger(RegistrationScreenAluguel.class.getName()).log(Level.SEVERE, null, ex);
          }
         
-        if ( (txtDataInicial.getText().isEmpty() ) || ( txtDataFinal.getText().isEmpty() )) {
-
-            JOptionPane.showMessageDialog(null, "Existem Informações sem atribuição, por favor preencha todos os dados");
-            return;
-
-        } else {
                     
-                            
         float valor = aluguelController.ExibirFaturamento(dataFormatada, dataFormatada2);
 
         lblExibirFaturamento.setText(Float.toString(valor));
-
         }
-        
-        
-        
-
-
-
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnExibirFaturamentoActionPerformed
 
     private void btnVoltarPainel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarPainel1ActionPerformed

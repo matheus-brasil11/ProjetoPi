@@ -28,6 +28,7 @@ public class QueryScreenVeiculo extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Alterar de Veículo");
         
     }
 
@@ -218,11 +219,17 @@ public class QueryScreenVeiculo extends javax.swing.JDialog {
         veiculo.setAcessorios(getTxtAcessorios().getText());
         veiculo.setQtdPortas(Integer.parseInt((String) getCbQtdPortas().getSelectedItem()));
         veiculo.setId(Integer.parseInt(getLblShowId().getText()));
-             
-        veiculoController.update(veiculo);
-        JOptionPane.showMessageDialog(null, "Alteração realizada com sucesso");
-        
-        dispose();
+          
+        if ( veiculo.getNumero().isEmpty() || veiculo.getPlaca().isEmpty() || veiculo.getFabricante().isEmpty() || veiculo.getModelo().isEmpty() ) {
+
+            JOptionPane.showMessageDialog(null, "Existem Informações sem atribuição, por favor preencha todos os dados");
+            return;
+
+        } else {
+                veiculoController.update(veiculo);
+                JOptionPane.showMessageDialog(null, "Alteração realizada com sucesso");  
+                dispose();
+            } 
     }//GEN-LAST:event_btnAlterarMouseClicked
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed

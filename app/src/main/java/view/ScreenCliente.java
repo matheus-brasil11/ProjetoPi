@@ -32,6 +32,7 @@ public class ScreenCliente extends javax.swing.JFrame {
         initComponetsModel();
         decorateTableTask();
         setLocationRelativeTo(null);
+        setTitle("Clientes");
     }
 
     /**
@@ -216,6 +217,7 @@ public class ScreenCliente extends javax.swing.JFrame {
                          }
                     }) ;
                break;
+               
             case 3 :
                  
                int resposta = JOptionPane.showOptionDialog(this,"Você realmente deseja apagar esse cliente?","Confirmação",

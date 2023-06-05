@@ -24,11 +24,13 @@ public class RegistrationScreenCliente extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Cadastro de Cliente");
     }
      
     RegistrationScreenCliente(boolean rootPaneCheckingEnabled) {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Cadastro de Cliente");
     }
 
     /** This method is called from within the constructor to

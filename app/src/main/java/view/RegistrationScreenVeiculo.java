@@ -21,10 +21,11 @@ public class RegistrationScreenVeiculo extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Cadastro de Veículo");
     }
     
     public RegistrationScreenVeiculo() {
-
+        setTitle("Cadastro de Veículo");
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -205,27 +206,19 @@ public class RegistrationScreenVeiculo extends javax.swing.JDialog {
         veiculo.setQtdPortas(Integer.parseInt((String) cbQtdPortas.getSelectedItem()));;
         veiculo.setAcessorios(txtAcessorios.getText());
         
-        
-        
-        System.out.println("Ano Modelo = " + veiculo.getAnoModelo());
 
-        if ( ((veiculo.getNumero().isEmpty()) || (veiculo.getPlaca().isEmpty() || veiculo.getFabricante().isEmpty()) ) ) {
+        if ( veiculo.getNumero().isEmpty() || veiculo.getPlaca().isEmpty() || veiculo.getFabricante().isEmpty() || veiculo.getModelo().isEmpty() ) {
 
             JOptionPane.showMessageDialog(null, "Existem Informações sem atribuição, por favor preencha todos os dados");
             return;
 
         } else {
-
             boolean result = veiculoController.save(veiculo);
 
             if(result) {
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
                 dispose();
-            } else {
-
-                JOptionPane.showMessageDialog(null, "O cpf digitado já existe no sistema");
-
-            }
+            } 
         }
     }//GEN-LAST:event_btnCadastrarMouseClicked
 

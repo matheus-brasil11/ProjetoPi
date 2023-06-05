@@ -32,6 +32,7 @@ public class ScreenVeiculo extends javax.swing.JFrame {
         initComponetsModel();
         decorateTableTask();
         setLocationRelativeTo(null);
+        setTitle("Veículos");
     }
      
     
@@ -210,18 +211,19 @@ public class ScreenVeiculo extends javax.swing.JFrame {
                 queryScreenVeiculo.getTxtAcessorios().setText(veiculo.getAcessorios());
                 queryScreenVeiculo.getLblShowId().setText(Integer.toString(veiculo.getId()));
                 
-                queryScreenVeiculo.setVisible(rootPaneCheckingEnabled);
+                queryScreenVeiculo.setVisible(true);
                 
-                queryScreenVeiculo.addWindowListener(new WindowAdapter() {
+                 queryScreenVeiculo.addWindowListener(new WindowAdapter() {
             
-                        public void windowClosed(WindowEvent e) {
-                
-                        initDataController();
-                        initComponetsModel();
-                        decorateTableTask();
+                 public void windowClosed(WindowEvent e) {
+  
+        initDataController();
+        initComponetsModel();
+        decorateTableTask();
                          }
                     }) ;
             break;
+            
             case 4 :
  
            int resposta = JOptionPane.showOptionDialog(this,"Você realmente deseja apagar esse veiculo?","Confirmação",
@@ -312,10 +314,6 @@ public class ScreenVeiculo extends javax.swing.JFrame {
          tableVeiculo.getTableHeader().setBackground(new Color(42, 47, 79));
          tableVeiculo.getTableHeader().setForeground(new Color(255, 255, 255));
          tableVeiculo.setAutoCreateRowSorter(true);
-
-         
-     
-         
          tableVeiculo.getColumnModel().getColumn(3).setCellRenderer(new ButtonColumnCellRenderer("edit"));
          tableVeiculo.getColumnModel().getColumn(4).setCellRenderer(new ButtonColumnCellRenderer("delete"));
      }
@@ -330,7 +328,7 @@ public class ScreenVeiculo extends javax.swing.JFrame {
          veiculoModel = new TableModelVeiculo();
          tableVeiculo.setModel(veiculoModel);
          
-          loadVeiculos();   
+         loadVeiculos();   
      }
      
      public void initComponetsModel(String model) {

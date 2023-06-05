@@ -18,7 +18,8 @@ public class ScreenPainel extends javax.swing.JFrame {
     public ScreenPainel() {
         initComponents();
         setLocationRelativeTo(null);
-       
+        setTitle("Painel");
+
     }
     /**
      * This method is called from within the constructor to initialize the form.

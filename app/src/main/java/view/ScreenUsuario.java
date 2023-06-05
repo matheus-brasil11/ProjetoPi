@@ -35,6 +35,7 @@ public class ScreenUsuario extends javax.swing.JFrame {
         initComponetsModel();
         decorateTableTask();
         setLocationRelativeTo(null);
+        setTitle("Usuários");
     }
 
     /**

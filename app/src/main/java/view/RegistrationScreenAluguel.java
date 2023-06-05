@@ -42,6 +42,7 @@ public class RegistrationScreenAluguel extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Cadastro de Aluguel");
         
      try {
         mf = new MaskFormatter("##-##-####");
